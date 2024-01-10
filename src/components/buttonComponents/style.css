@@ -1,0 +1,108 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	background-color: #333;
+	overflow: hidden;
+}
+.title {
+	font-size: 50px;
+	margin: 100px;
+	color: #fff;
+	text-align: center;
+}
+
+button {
+	position: relative;
+	margin: 20px;
+	padding: 30px 50px;
+	background: none;
+	border: 1px solid #fff;
+	border-radius: 8px;
+	color: #ffffff;
+	font-size: 28px;
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: hidden;
+}
+button::before,
+button::after {
+	display: block;
+	position: absolute;
+	content: "";
+	transition: all 0.5s;
+	z-index: -1;
+}
+.movingLines {
+	width: 180px;
+	height: 95px;
+}
+.movingLines::after {
+	height: 100%;
+	top: 0;
+	left: 20px;
+	border-left: 2px solid #fff;
+}
+.movingLines::before {
+	width: 100%;
+	top: -10px;
+	left: 0;
+	border-top: 3px solid #fff;
+}
+.movingLines:hover::after {
+	left: 300px;
+}
+.movingLines:hover::before {
+	top: 100px;
+}
+.spanText,
+.spanEmoticon {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.spanText {
+	left: 50%;
+	transition: 0.5s;
+}
+.spanEmoticon {
+	left: -50%;
+	transition: 0.5s 0.1s;
+}
+.movingLines:hover .spanText {
+	left: 150%;
+}
+.movingLines:hover .spanEmoticon {
+	left: 50%;
+}
+/* second button second button second button second button second button */
+.movingColor::before,
+.movingColor::after {
+	width: 100%;
+	height: 100%;
+	background-color: fuchsia;
+}
+.movingColor::before {
+	top: -50%;
+	left: -100%;
+}
+.movingColor::after {
+	bottom: -50%;
+	right: -100%;
+}
+.movingColor:hover::before {
+	left: 0;
+}
+.movingColor:hover::after {
+	right: 0;
+}
+/*3 button 3 button 3 button 3 button 3 button 3 button 3 button 3 button */

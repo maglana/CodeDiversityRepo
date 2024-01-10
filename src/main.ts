@@ -1,24 +1,27 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+function loadComponent(buttonComponents: string) {
+	const componentContainer = document.getElementById("componentContainer");
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+	// Ładowanie HTML
+	fetch(`\src\components\buttonComponents`)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(
+					`Failed to load HTML (${response.status} ${response.statusText})`
+				);
+			}
+			return response.text();
+		})
+		.then((html) => {
+			// Dodanie HTML do kontenera
+			if (componentContainer) {
+				componentContainer.innerHTML = html;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+				// Ładowanie CSS
+				const styleLink = document.createElement("link");
+				styleLink.rel = "stylesheet";
+				styleLink.href = `buttonComponents/style.css`;
+				document.head.appendChild(styleLink);
+			}
+		})
+		.catch((error) => console.error("Error loading component:", error));
+}
