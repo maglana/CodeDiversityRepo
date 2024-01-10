@@ -63,3 +63,22 @@ button::before, button::after {
 .movingLines:hover::before {
 	top: 100px;
 }
+.span1, .span2 {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.span1{
+	left: 50%;
+	transition: .5s;
+}
+.span2{
+	left: -50%;
+	transition: .5s .1s;
+}
+.movingLines:hover .span1{
+	left: 150%;
+}
+.movingLines:hover .span2{
+	left: 50%;
+}
