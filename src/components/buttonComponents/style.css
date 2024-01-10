@@ -14,7 +14,7 @@ body {
 	background-color: #333;
 	overflow: hidden;
 }
-.title{
+.title {
 	font-size: 50px;
 	margin: 100px;
 	color: #fff;
@@ -34,51 +34,75 @@ button {
 	cursor: pointer;
 	overflow: hidden;
 }
-button::before, button::after {
+button::before,
+button::after {
 	display: block;
 	position: absolute;
-	content: '';
-	transition: all .5s;
+	content: "";
+	transition: all 0.5s;
 	z-index: -1;
 }
 .movingLines {
 	width: 180px;
 	height: 95px;
 }
-.movingLines::after{
+.movingLines::after {
 	height: 100%;
 	top: 0;
 	left: 20px;
 	border-left: 2px solid #fff;
 }
-.movingLines::before{
+.movingLines::before {
 	width: 100%;
 	top: -10px;
 	left: 0;
 	border-top: 3px solid #fff;
 }
-.movingLines:hover::after{
+.movingLines:hover::after {
 	left: 300px;
 }
 .movingLines:hover::before {
 	top: 100px;
 }
-.span1, .span2 {
+.spanText,
+.spanEmoticon {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
-.span1{
+.spanText {
 	left: 50%;
-	transition: .5s;
+	transition: 0.5s;
 }
-.span2{
+.spanEmoticon {
 	left: -50%;
-	transition: .5s .1s;
+	transition: 0.5s 0.1s;
 }
-.movingLines:hover .span1{
+.movingLines:hover .spanText {
 	left: 150%;
 }
-.movingLines:hover .span2{
+.movingLines:hover .spanEmoticon {
 	left: 50%;
 }
+/* second button second button second button second button second button */
+.movingColor::before,
+.movingColor::after {
+	width: 100%;
+	height: 100%;
+	background-color: fuchsia;
+}
+.movingColor::before {
+	top: -50%;
+	left: -100%;
+}
+.movingColor::after {
+	bottom: -50%;
+	right: -100%;
+}
+.movingColor:hover::before {
+	left: 0;
+}
+.movingColor:hover::after {
+	right: 0;
+}
+/*3 button 3 button 3 button 3 button 3 button 3 button 3 button 3 button */
