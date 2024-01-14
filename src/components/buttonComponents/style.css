@@ -106,3 +106,62 @@ button::after {
 	right: 0;
 }
 /*3 button 3 button 3 button 3 button 3 button 3 button 3 button 3 button */
+.buttonThree {
+	border: none;
+	transition: 0.5s;
+}
+.buttonThree:hover {
+	box-shadow: 2px 3px 0 0 rgba(255, 255, 255, .8), inset 11px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*4 botton *4 botton *4 botton *4 botton *4 botton  */
+
+.newBorder {
+	border-radius: 0;
+	overflow: visible;
+	transition: 0.8s;
+}
+.newBorder:hover {
+	border: 1px solid transparent;
+	color: fuchsia;
+}
+.newBorder::after,
+.newBorder::before {
+	width: 100%;
+	height: 100%;
+}
+.newBorder::before {
+	top: 0;
+	left: 0;
+}
+.newBorder::after {
+	bottom: 0;
+	right: 0;
+}
+.newBorder:hover::after {
+	bottom: -10px;
+	right: -10px;
+	border-bottom: 5px solid fuchsia;
+	border-right: 5px solid fuchsia;
+}
+.newBorder:hover::before {
+	top: -10px;
+	left: -10px;
+	border-top: 5px solid fuchsia;
+	border-left: 5px solid fuchsia;
+}
+
+/* 5 5555555555 5 */
+
+.flash::before{
+	top: -30px;
+	left:-130px;
+	height: 160%;
+	width: 100px;
+	background-image: linear-gradient(-90deg, rgba(238, 46, 206, 0.897), rgba(255, 255, 255, 0));
+	transform: rotate(20deg);
+}
+.flash:hover::before{
+	left: 130%;
+
+}
