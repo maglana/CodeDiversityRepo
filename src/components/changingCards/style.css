@@ -1,0 +1,230 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	background-color: #333;
+	overflow: hidden;
+}
+
+.card {
+	position: relative;
+	margin: 20px 80px;
+	width: 450px;
+	height: 700px;
+	perspective: 800px;
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	border-radius: 15px;
+	transition: 0.8s;
+}
+
+.first {
+	background-image: url(photoCards/portugal.jpg);
+}
+
+.second {
+	background-image: url(photoCards/madeira-blue-flower.jpg);
+}
+
+.third {
+	background-image: url(photoCards/madeira.jpg);
+}
+.fourth{
+	background-image: url(photoCards/laurel-forest.jpg);
+}
+.text {
+	position: absolute;
+	border-radius: 15px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px;
+	background-image: linear-gradient(315deg, #e660c9, #68f1c8);
+	opacity: 0;
+	transition: 0.8s;
+}
+
+h3 {
+	margin-top: 450px;
+	margin-bottom: 20px;
+}
+.text-first {
+	transform: rotateX(-180deg);
+}
+.text-second {
+	transform: rotateY(-180deg);
+}
+.card:hover .text {
+	transform: rotate(0);
+	opacity: 1;
+}
+.card:hover .first {
+	transform: rotateX(180deg);
+	opacity: 0;
+}
+.card:hover .second {
+	transform: rotateY(-180deg);
+	opacity: 0;
+}
+
+/*3 photo*/
+.card:hover .third {
+	animation: oneSide 0.8s;
+}
+.card:hover .text-third {
+	animation: nextSide 0.8s;
+}
+
+@keyframes oneSide {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateX(-60%);
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes nextSide {
+	0% {
+		transform: translateX(0);
+		z-index: -1;
+	}
+	50% {
+		transform: translateX(60%);
+		z-index: -1;
+	}
+	100% {
+		z-index: 1;
+	}
+}
+/* odwrotna animacja - powrót */
+
+.text-third {
+	animation: nextSide-reverse 0.8s;
+}
+
+@keyframes nextSide-reverse {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		transform: translateX(60%);
+		z-index: -1;
+	}
+	100% {
+		transform: translateX(0);
+		z-index: -1;
+	}
+}
+
+.up-reverse-class {
+	animation: oneSide-reverse 0.8s;
+}
+@keyframes oneSide-reverse {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateX(-60%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+/* 4 photo*/
+
+.card:hover .fourth {
+	animation: up 0.8s;
+}
+.card:hover .text-fourth {
+	animation: down 0.8s;
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-60%);
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes down {
+	0% {
+		transform: translateY(0);
+		z-index: -1;
+	}
+	50% {
+		transform: translateY(60%);
+		z-index: -1;
+	}
+	100% {
+		z-index: 1;
+	}
+}
+/* odwrotna animacja - powrót */
+
+.text-fourth {
+	animation: down-reverse 0.8s;
+}
+
+@keyframes down-reverse {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		transform: translateY(60%);
+		z-index: -1;
+	}
+	100% {
+		transform: translateY(0);
+		z-index: -1;
+	}
+}
+
+.up-reverse-class2 {
+	animation: up-reverse 0.8s;
+}
+@keyframes up-reverse {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-60%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
