@@ -19,6 +19,7 @@ body {
 	margin: 20px 80px;
 	width: 450px;
 	height: 700px;
+	perspective: 800px;
 }
 
 .img {
@@ -49,7 +50,7 @@ body {
 	bottom: 0;
 	right: 0;
 	padding: 30px;
-	background-image: linear-gradient(315deg, #fee2f8, #dcf8ef);
+	background-image: linear-gradient(315deg, #e660c9, #68f1c8);
 	opacity: 0;
 	transition: 0.8s;
 }
@@ -58,13 +59,21 @@ h3 {
 	margin-top: 450px;
 	margin-bottom: 20px;
 }
-.text-first{
+.text-first {
 	transform: rotateX(-180deg);
 }
-.text-second{
-	transform: rotate(-180deg);
+.text-second {
+	transform: rotateY(-180deg);
 }
-.card:hover .text{
+.card:hover .text {
 	transform: rotate(0);
 	opacity: 1;
+}
+.card:hover .first{
+	transform: rotateX(180deg);
+	opacity: 0;
+}
+.card:hover .second{
+	transform: rotateY(-180deg);
+	opacity: 0;
 }
