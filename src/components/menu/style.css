@@ -9,7 +9,8 @@ body {
 	font-family: "Ubuntu", sans-serif;
 	overflow: hidden;
 	color: #fff;
-	background: linear-gradient(10deg, #f063e4 60%, #ec04d9 60%);
+	/*background: linear-gradient(10deg, #63f09e 60%, #ec04d9 60%);*/
+	background: linear-gradient(30deg, #63f09e 30%, #ec04d9 75%, #aeec04 60%);
 }
 
 nav {
@@ -34,13 +35,13 @@ ul {
 	background-color: #7321dd;
 }
 .dropdown {
-    position: absolute;
-    width: 300px;
+	position: absolute;
+	width: 300px;
 }
-.dropdown li{
-    background-color: #2028a1;
-    transition: color .3s;
+.dropdown li {
+	background-color: #2028a1;
+	transition: color 0.3s;
 }
-.dropdown li:hover{
-    color: #0dcf5e;
+.dropdown li:hover {
+	color: #0dcf5e;
 }
