@@ -1,24 +1,46 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    height: 100vh;
-    font-family: 'Ubuntu', sans-serif;
-    overflow: hidden;
-    color: #fff;
-    background: linear-gradient(10deg, #f063e4 60%, #ec04d9 60%);
+	height: 100vh;
+	font-family: "Ubuntu", sans-serif;
+	overflow: hidden;
+	color: #fff;
+	background: linear-gradient(10deg, #f063e4 60%, #ec04d9 60%);
 }
 
 nav {
-    margin-top: 100px;
-    background-color: #292929;
-    text-align: center;
+	margin-top: 100px;
+	background-color: #292929;
+	text-align: center;
 }
 
 ul {
-    list-style: none;
-    font-size: 24px;
+	list-style: none;
+	font-size: 24px;
+}
+.menu-item {
+	display: inline-block;
+	height: 100px;
+	width: 300px;
+	line-height: 100px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.menu-item:hover {
+	background-color: #7321dd;
+}
+.dropdown {
+    position: absolute;
+    width: 300px;
+}
+.dropdown li{
+    background-color: #2028a1;
+    transition: color .3s;
+}
+.dropdown li:hover{
+    color: #0dcf5e;
 }
