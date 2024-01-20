@@ -47,17 +47,47 @@ ul {
 .dropdown li:hover {
 	color: #0dcf5e;
 }
-.menu-item:hover .dropdown li{
+.menu-item:hover .dropdown li {
 	display: block;
-	animation: menu1 .5s forwards;
+	animation: menu1 0.5s forwards;
+}
+.menu-item:hover .dropdown li:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.menu-item:hover .dropdown li:nth-child(3) {
+	animation-delay: 0.4s;
+}
+.menu-item:hover .dropdown li:nth-child(4) {
+	animation-delay: 0.6s;
+}
+.menu-item:hover .dropdown li:nth-child(5) {
+	animation-delay: 0.8s;
+}
+.menu-item:hover .dropdown li:nth-child(6) {
+	animation-delay: 0.1s;
 }
 @keyframes menu1 {
-	from{
+	from {
 		opacity: 0;
 		transform: rotate(36deg);
 	}
-	to{
+	to {
 		opacity: 1;
 		transform: rotate(0);
+	}
+}
+
+.second:hover .dropdown li {
+	display: block;
+	animation: menu2 0.5s forwards;
+}
+@keyframes menu2 {
+	from {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
